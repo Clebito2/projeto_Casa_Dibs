@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proposta Comercial - Casa Dibs</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Plano de Execução - Casa Dibs | Live Consultoria</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -34,20 +32,24 @@
             z-index: 1000;
         }
         .top-left-logo img {
-            width: 50px; /* Tamanho pequeno */
-            height: 50px; /* Altura igual à largura para formar um círculo */
-            border-radius: 50%; /* Torna a imagem redonda */
-            object-fit: cover; /* Garante que a imagem preencha o círculo */
-            border: 2px solid var(--color-primary); /* Borda sutil */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--color-primary);
             box-shadow: 0 0 15px rgba(0, 232, 0, 0.5);
         }
         .container {
             max-width: 960px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 2rem 1rem;
         }
-        section {
-            padding: 4rem 0;
+        .card {
+            background-color: var(--color-card);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--color-primary);
+            margin-bottom: 2rem;
         }
         h1, h2, h3, h4 {
             font-weight: 700;
@@ -55,129 +57,86 @@
         }
         h1 { font-size: 2.5rem; }
         h2 { font-size: 2rem; text-align: center; margin-bottom: 3rem; }
-        h3 { font-size: 1.25rem; }
+        h3 { font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1rem; }
         h4 { font-size: 1.1rem; margin: 0; }
-        p { line-height: 1.6; color: var(--color-text-muted); }
+        p, li { line-height: 1.6; color: var(--color-text-muted); }
 
-        .hero {
-            background-image: linear-gradient(rgba(4, 18, 31, 0.85), rgba(4, 18, 31, 0.85)), url('https://images.unsplash.com/photo-1554494583-c4e16298348c?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+        .header {
             text-align: center;
-            padding: 5rem 0;
+            padding: 2rem 0;
         }
-        .hero .brand-green {
-            color: var(--color-primary);
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--color-text);
+        .client-info {
+            background: rgba(0, 232, 0, 0.05);
+            border: 1px solid var(--color-primary);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
         }
 
-        .card {
-            background-color: var(--color-card);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--color-primary);
-        }
-        .card.diagnostic p {
-            font-family: var(--font-secondary);
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--color-text);
-        }
-        
-        .action-plan {
+        .tabs {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            background: var(--color-card);
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-        .step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 200px;
-        }
-        .step-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--color-primary);
-            color: var(--color-background);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .step .duration {
+        .tab-button {
+            flex: 1;
+            padding: 15px 10px;
+            background: transparent;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
             font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--color-text);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--color-card);
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #1a3a5a;
-        }
-        th {
-            color: var(--color-text);
-            font-weight: 600;
-        }
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-        .text-right { text-align: right; }
-        
-        ul.scope-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        ul.scope-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .check-icon {
-            font-size: 1.5rem;
-            color: var(--color-primary);
-            margin-top: -4px;
-        }
-
-        .total-investment {
             text-align: center;
-            background-color: #04121f;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            margin: 2rem 0;
         }
-        .total-investment p {
-            margin: 0;
-            font-size: 1.25rem;
+        .tab-button.active {
+            background: var(--color-primary);
+            color: var(--color-background);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 232, 0, 0.3);
         }
-        .total-investment .total-value {
-            font-size: 3rem;
-            font-weight: 700;
+        .tab-button:hover:not(.active) {
+            background: rgba(0, 232, 0, 0.1);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .card ul li::before {
+            content: '✓';
             color: var(--color-primary);
-            margin-top: 0.5rem;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
         }
         .footer {
             background-color: #000;
             padding: 3rem 0;
             text-align: center;
+            margin-top: 4rem;
         }
         .footer img {
             max-width: 200px;
@@ -194,282 +153,97 @@
         <img src="https://raw.githubusercontent.com/Clebito2/CasaDibs/main/Logo%20live%20oficial-21.png" alt="Live Consultoria">
     </div>
 
-    <header class="hero">
-        <div class="container">
-            <h1>Plano de Ação e Proposta para <span class="brand-green">Casa Dibs</span></h1>
-        </div>
-    </header>
+    <div class="container">
+        <header class="header">
+            <h1>Plano de Execução para <span style="color: var(--color-primary);">Casa Dibs</span></h1>
+            <div class="client-info">
+                <h3>Cliente: CASA DIBS LTDA</h3>
+                <p><strong>Consultor Responsável:</strong> Luiz Portal</p>
+            </div>
+        </header>
 
-    <main>
-        <section id="diagnosis">
-            <div class="container">
-                <h2>Diagnóstico Estratégico</h2>
-                <div class="card diagnostic">
-                    <p>"A Casa Dibs enfrenta desafios significativos após um período de expansão, resultando em desequilíbrios operacionais e financeiros. A estrutura atual carece de processos formalizados, clareza de papéis e governança corporativa. A operação está dividida em seis macroáreas de negócio sem uma projeção financeira clara, dificultando a análise de rentabilidade. O plano estratégico visa a estabilização e otimização da estrutura atual, com foco em reestruturação organizacional, planejamento financeiro e desenvolvimento de novos negócios."</p>
-                </div>
-            </div>
-        </section>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('diagnostico')">Diagnóstico</button>
+            <button class="tab-button" onclick="showTab('plano')">Plano Estratégico</button>
+            <button class="tab-button" onclick="showTab('execucao')">Execução - Fase 1</button>
+            <button class="tab-button" onclick="showTab('investimento')">Investimento</button>
+        </div>
 
-        <section id="action-plan">
-            <div class="container">
-                <h2>Nosso Plano de Ação (Macro)</h2>
-                <div class="action-plan">
-                    
-        <div class="step">
-            <div class="step-icon">1</div>
-            <div class="step-content">
-                <h3>Diagnóstico Detalhado e Mapeamento</h3>
-                <p class="duration">2 semanas</p>
-                <p>Análise aprofundada das áreas de negócio, identificação de gargalos e oportunidades de melhoria, e mapeamento dos processos existentes.</p>
-            </div>
+        <div id="diagnostico-tab" class="tab-content card active">
+            <h2>Diagnóstico Estratégico</h2>
+            <p style="font-family: var(--font-secondary); font-style: italic; font-size: 1.1rem; color: var(--color-text);">
+                "A Casa Dibs enfrenta desafios significativos após um período de expansão, resultando em desequilíbrios operacionais e financeiros. A estrutura atual carece de processos formalizados, clareza de papéis e governança corporativa. A operação está dividida em seis macroáreas de negócio sem uma projeção financeira clara, dificultando a análise de rentabilidade. O plano estratégico visa a estabilização e otimização da estrutura atual, com foco em reestruturação organizacional, planejamento financeiro e desenvolvimento de novos negócios."
+            </p>
         </div>
-    
-        <div class="step">
-            <div class="step-icon">2</div>
-            <div class="step-content">
-                <h3>Reestruturação Organizacional e Definição de Papéis</h3>
-                <p class="duration">4 semanas</p>
-                <p>Desenho da nova estrutura organizacional, definição clara de responsabilidades e estabelecimento de processos de governança corporativa.</p>
-            </div>
-        </div>
-    
-        <div class="step">
-            <div class="step-icon">3</div>
-            <div class="step-content">
-                <h3>Planejamento Financeiro e Projeção de Cenários</h3>
-                <p class="duration">6 semanas</p>
-                <p>Implementação de ferramentas de controle financeiro, projeção de cenários de rentabilidade por área de negócio e desenvolvimento de um plano financeiro estratégico.</p>
-            </div>
-        </div>
-    
-        <div class="step">
-            <div class="step-icon">4</div>
-            <div class="step-content">
-                <h3>Desenvolvimento de Novos Negócios e Otimização Operacional</h3>
-                <p class="duration">8 semanas</p>
-                <p>Identificação e desenvolvimento de novas oportunidades de negócio, implementação de melhorias nos processos operacionais e acompanhamento dos resultados.</p>
-            </div>
-        </div>
-    
-                </div>
-            </div>
-        </section>
 
-        <section id="schedule">
-            <div class="container">
-                <h2>Cronograma de Entregáveis</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Etapa</th>
-                            <th>Entregável</th>
-                            <th>Responsável</th>
-                            <th class="text-right">Prazo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-        <tr>
-            <td>1</td>
-            <td>Relatório de Diagnóstico Detalhado</td>
-            <td>Consultor Líder</td>
-            <td class="text-right">10 dias</td>
-        </tr>
-    
-        <tr>
-            <td>1</td>
-            <td>Mapeamento dos Processos Críticos</td>
-            <td>Consultor Líder</td>
-            <td class="text-right">5 dias</td>
-        </tr>
-    
-        <tr>
-            <td>2</td>
-            <td>Desenho da Nova Estrutura Organizacional</td>
-            <td>Consultor Líder</td>
-            <td class="text-right">15 dias</td>
-        </tr>
-    
-        <tr>
-            <td>2</td>
-            <td>Definição de Cargos e Responsabilidades</td>
-            <td>Consultor Líder</td>
-            <td class="text-right">5 dias</td>
-        </tr>
-    
-        <tr>
-            <td>3</td>
-            <td>Implementação de Ferramentas de Controle Financeiro</td>
-            <td>Especialista Financeiro</td>
-            <td class="text-right">20 dias</td>
-        </tr>
-    
-        <tr>
-            <td>3</td>
-            <td>Projeção de Cenários Financeiros</td>
-            <td>Especialista Financeiro</td>
-            <td class="text-right">10 dias</td>
-        </tr>
-    
-        <tr>
-            <td>4</td>
-            <td>Identificação de Oportunidades de Novos Negócios</td>
-            <td>Consultor Líder</td>
-            <td class="text-right">20 dias</td>
-        </tr>
-    
-        <tr>
-            <td>4</td>
-            <td>Implementação de Melhorias Operacionais</td>
-            <td>Consultor Líder</td>
-            <td class="text-right">20 dias</td>
-        </tr>
-    
-                    </tbody>
-                </table>
+        <div id="plano-tab" class="tab-content">
+            <div class="card">
+                <h2>Plano Estratégico (Macro)</h2>
+                <h3>Fase 1: Reestruturação Organizacional e de Equipes</h3>
+                <p>Ajustar a estrutura humana para otimizar custos, clarear responsabilidades e preparar a equipe para o novo momento.</p>
+                <h3>Fase 2: Planejamento Estratégico e Financeiro</h3>
+                <p>Com a estrutura de custos redefinida, o foco se volta para a sustentabilidade e o planejamento do crescimento.</p>
+                <h3>Fase 3: Desenvolvimento de Novos Negócios e Otimização</h3>
+                <p>Criar novas fontes de receita e otimizar as operações existentes para aumentar o fluxo de clientes.</p>
             </div>
-        </section>
+        </div>
 
-        <section id="details">
-            <div class="container">
-                <h2>Detalhes da Parceria</h2>
+        <div id="execucao-tab" class="tab-content">
+            <div class="card">
+                <h2>Execução - Fase 1: Ações Imediatas</h2>
                 
-                <h3>Escopo Detalhado</h3>
-                <div class="card" style="margin-top: 1rem;">
-                    <ul class="scope-list">
-                        
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Relatório de Diagnóstico Detalhado</h4>
-                <p>Responsável: Consultor Líder | Prazo: 10 dias</p>
+                <h3>Compras</h3>
+                <ul>
+                    <li>Estabelecer teto de compras em 62% da média de faturamento.</li>
+                    <li>Controle de saldo semanal a ser realizado por Jacqueline e compradores.</li>
+                    <li>Compras acima de R$ 3.000,00 devem ter a melhor data de vencimento consultada.</li>
+                </ul>
+
+                <h3>Recursos Humanos</h3>
+                <ul>
+                    <li>Desligamento imediato da Flávia e contratação da Amanda (em andamento).</li>
+                    <li>Desligamento da Lucélia a ser efetivado até 01 de Setembro.</li>
+                    <li>Desligamento do Darys em 01 de Setembro (rescisão de R$ 9.000,00).</li>
+                    <li>Abrir vaga para Gerente Júnior e estruturar a rotina da função.</li>
+                </ul>
+
+                <h3>Processos e Treinamento</h3>
+                <ul>
+                    <li>Definir que os responsáveis de cada área devem gerar as requisições de compras.</li>
+                    <li>Arthur ficará responsável por agrupar e centralizar as requisições.</li>
+                    <li>Marcar treinamento sobre o novo processo de requisição até 29 de Agosto.</li>
+                </ul>
+
+                <h3>Estratégia e Modelagem de Negócio</h3>
+                <ul>
+                    <li>Montar o Business Model Canvas (BMC) para cada área/projeto da Casa Dibs.</li>
+                    <li>Meta de desenvolvimento de 2 BMCs por semana (Ex: curso de churrasco, eventos).</li>
+                    <li>Iniciar o planejamento estratégico do zero, baseado em novas projeções financeiras.</li>
+                </ul>
+
+                <h3>Operações e Inventário</h3>
+                <ul>
+                    <li>Realizar o inventário completo de todos os bens da empresa.</li>
+                    <li>Executar a contagem total do estoque físico.</li>
+                </ul>
             </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Mapeamento dos Processos Críticos</h4>
-                <p>Responsável: Consultor Líder | Prazo: 5 dias</p>
-            </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Desenho da Nova Estrutura Organizacional</h4>
-                <p>Responsável: Consultor Líder | Prazo: 15 dias</p>
-            </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Definição de Cargos e Responsabilidades</h4>
-                <p>Responsável: Consultor Líder | Prazo: 5 dias</p>
-            </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Implementação de Ferramentas de Controle Financeiro</h4>
-                <p>Responsável: Especialista Financeiro | Prazo: 20 dias</p>
-            </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Projeção de Cenários Financeiros</h4>
-                <p>Responsável: Especialista Financeiro | Prazo: 10 dias</p>
-            </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Identificação de Oportunidades de Novos Negócios</h4>
-                <p>Responsável: Consultor Líder | Prazo: 20 dias</p>
-            </div>
-        </li>
-    
-        <li>
-            <div class="check-icon">✓</div>
-            <div>
-                <h4>Implementação de Melhorias Operacionais</h4>
-                <p>Responsável: Consultor Líder | Prazo: 20 dias</p>
-            </div>
-        </li>
-    
-                    </ul>
-                </div>
-                
-                <h3 style="margin-top: 3rem;">Investimento</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Entregável</th>
-                            <th class="text-right">Valor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-        <tr>
-            <td>Relatório de Diagnóstico Detalhado</td>
-            <td class="text-right">R$ 8.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Mapeamento dos Processos Críticos</td>
-            <td class="text-right">R$ 6.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Desenho da Nova Estrutura Organizacional</td>
-            <td class="text-right">R$ 12.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Definição de Cargos e Responsabilidades</td>
-            <td class="text-right">R$ 7.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Implementação de Ferramentas de Controle Financeiro</td>
-            <td class="text-right">R$ 15.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Projeção de Cenários Financeiros</td>
-            <td class="text-right">R$ 10.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Identificação de Oportunidades de Novos Negócios</td>
-            <td class="text-right">R$ 18.000,00</td>
-        </tr>
-    
-        <tr>
-            <td>Implementação de Melhorias Operacionais</td>
-            <td class="text-right">R$ 12.000,00</td>
-        </tr>
-    
-                    </tbody>
-                </table>
-                
+        </div>
+
+        <div id="investimento-tab" class="tab-content">
+            <div class="card">
+                <h2>Registro do Investimento</h2>
                 <div class="total-investment">
                     <p>Valor Total do Projeto</p>
                     <p class="total-value">R$ 88.000,00</p>
                 </div>
-
                 <div>
                     <h3>Condições de Pagamento:</h3>
                     <p>50% na assinatura do contrato e 50% na entrega final.</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -480,5 +254,21 @@
         </div>
     </footer>
 
+    <script>
+        function showTab(tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
